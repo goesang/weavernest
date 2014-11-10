@@ -7,8 +7,8 @@ public class Static {
 	public static String selectProject;
 	public static String selectProjectPath;
 	public static String workspacePath;
-	public static String weaverName;
-	public static String password;
+	public static String name;
+	public static String email;
 	public static Shell shell;
 	public static boolean mozilla;
 	public static String alertTitle;

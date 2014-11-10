@@ -1,19 +1,29 @@
-﻿@font-face{font-family:NG;src:url(../fonts/NanumGothic.eot);src:local(※),url(../fonts/NanumGothic.woff) format('woff')}
+﻿@font-face {
 
+    font-family:'NanumGothic';
+    src: url('../fonts/NanumGothic.eot');
+    src: url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'),
+
+         url('../fonts/NanumGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 * {
-	font-family:NanumGothic, NG, sans-serif;
-	font-size: 11.5px;
-	text-decoration:none;
+	font-family:'NanumGothic' !important; 
+	font-size: 11.5px !important;
+	font-weight: 600 !important;   
+	text-decoration:none !important; 
 }
 
 #commitMassage{
 	height: 145px !important; 
 	width: 100% !important; 
-	font-size:12px;
+	font-size:12px !important;
 }
 
 #branchName{
-	font-size:12px;
+	font-size:12px !important;
 }
 
 h3{
@@ -39,9 +49,5 @@ a[data-role="button"] {
 
 .ui-header .ui-title {
 	padding-top: 6px;
-	font-size: 13.4px
-}
-
-body {
-	border: 2px solid red
+	font-size: 13.4px !important;
 }

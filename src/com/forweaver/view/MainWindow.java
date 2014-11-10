@@ -1,6 +1,4 @@
 package com.forweaver.view;
-import java.net.URLDecoder;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.graphics.Color;
@@ -12,7 +10,7 @@ import org.eclipse.swt.widgets.Shell;
 import com.forweaver.function.git.ChangeBranch;
 import com.forweaver.function.git.DeleteBranch;
 import com.forweaver.function.git.DeleteCommit;
-import com.forweaver.function.git.DownloadTree;
+import com.forweaver.function.git.GitDownload;
 import com.forweaver.function.git.GitInit;
 import com.forweaver.function.git.LoadBranchList;
 import com.forweaver.function.git.LoadCommitLogSimpleList;
@@ -48,7 +46,7 @@ public class MainWindow {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		;
+
 		try {
 			MainWindow window = new MainWindow();
 			window.open();
@@ -79,7 +77,7 @@ public class MainWindow {
 	protected void createContents() {
 		shell = new Shell(SWT.NO_TRIM);	
 		shell.setSize(336, 486);
-		shell.setText("위버네스트");
+		shell.setText("위버네스트");	
 		shell.setBackground(new Color(null, new RGB(60, 60, 60)));
 		int x = ( Display.getDefault().getBounds().width - shell.getSize().x)/2;
 		int y = ( Display.getDefault().getBounds().height - shell.getSize().y)/2;
@@ -93,7 +91,7 @@ public class MainWindow {
 		new CreateBranchWindow(browser);
 		new CreateAlertWindow(browser);
 		new CreateCommitLogWindow(browser);
-		new DownloadTree(browser);
+		new GitDownload(browser);
 		new LoadProject(browser);
 		new LoadBranchList(browser);
 		new LoadCommitLogSimpleList(browser);

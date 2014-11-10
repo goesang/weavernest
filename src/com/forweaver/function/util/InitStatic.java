@@ -1,5 +1,7 @@
 package com.forweaver.function.util;
 
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.lib.Config;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.BrowserFunction;
 import org.eclipse.swt.widgets.Shell;
@@ -23,7 +25,6 @@ public class InitStatic extends BrowserFunction{
 		Static.alertTitle = "";
 		Static.alertContent = "";
 		Static.parentScript = "";
-		
 		return true;
 	}
 }

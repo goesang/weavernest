@@ -24,10 +24,7 @@ public class Push extends BrowserFunction{
 			Repository localRepo = new FileRepository(Static.selectProjectPath +File.separatorChar+ ".git");
 			Git git = new Git(localRepo);
 			git.push()
-					.setRemote("origin")
-					.setCredentialsProvider(
-							new UsernamePasswordCredentialsProvider(Static.weaverName,
-									Static.password)).call();
+					.setRemote("origin").call();
 
 		} catch (Exception e) {
 			CreateErrorWindow.open("에러", "푸시하지 못하였습니다!");

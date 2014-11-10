@@ -15,8 +15,8 @@ public class RememberWeaver extends BrowserFunction {
 	@Override
 	public Object function(Object[] arg) {
 		// TODO Auto-generated method stub
-		Static.weaverName = arg[0].toString();
-		Static.password = arg[1].toString();
+		Static.name = arg[0].toString();
+		Static.email = arg[1].toString();
 			
 		return true;
 	}

@@ -25,10 +25,7 @@ public class Pull extends BrowserFunction{
 		try {
 			Repository localRepo = new FileRepository(Static.selectProjectPath + File.separatorChar+".git");
 			Git git = new Git(localRepo);
-			git.pull()
-					.setCredentialsProvider(
-							new UsernamePasswordCredentialsProvider(Static.weaverName,
-									Static.password)).call();
+			git.pull().call();
 
 		} catch (Exception e) {
 			CreateErrorWindow.open("에러", "풀하지 못하였습니다!");

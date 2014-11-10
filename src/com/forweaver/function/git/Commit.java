@@ -2,6 +2,7 @@ package com.forweaver.function.git;
 
 import java.io.File;
 
+import org.eclipse.jgit.api.CommitCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.internal.storage.file.FileRepository;
 import org.eclipse.jgit.lib.Repository;
@@ -27,7 +28,13 @@ public class Commit extends BrowserFunction {
 					+ File.separatorChar + ".git"); // 깃 저장소를 가져온다.
 			Git git = new Git(localRepo);
 			git.add().addFilepattern(".").call(); // 그냥 모든 파일을 추가함
-			git.commit().setMessage(commitMessage).setAmend(amend).call(); // 커밋 로그 작성
+			CommitCommand tmp = git.commit().setMessage(commitMessage).setAmend(amend);
+
+			if(!Static.name.equals("") && !Static.email.equals(""))
+				tmp.setAuthor(Static.name, Static.email);
+
+			tmp.call(); // 커밋 로그 작성
+			
 			return true;
 		} catch (Exception e) {
 			CreateErrorWindow.open("에러", "커밋하지 못하였습니다!");
